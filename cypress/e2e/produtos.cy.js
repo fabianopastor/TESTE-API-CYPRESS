@@ -7,7 +7,7 @@ describe('Login - Teste de listar produtos', () => {
         cy.token('fulano@qa.com', 'teste').then(tkn => { token = tkn })
     })
 
-    it('Deve listar produto', () => {
+    it.only('Deve listar produto', () => {
         cy.request({
             method: 'GET',
             url: 'produtos'
@@ -40,7 +40,7 @@ describe('Login - Teste de listar produtos', () => {
     });
 
     
-    it.only('Deve Cadastrar Produto repetido', () => {
+    it('Deve Cadastrar Produto repetido', () => {
         cy.CadastrarProduto(token, "Produto EBAC Novo 1", 250, "Descricao do prod novo", 180)
 
             .then((response) => {
