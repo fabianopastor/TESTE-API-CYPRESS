@@ -19,7 +19,6 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-const cypress = require("cypress")
 
 // -- This is a parent command --
 Cypress.Commands.add('token', (email, senha) => {
@@ -36,7 +35,7 @@ Cypress.Commands.add('token', (email, senha) => {
     })
 })
 
-cypress.Commands.add('CadastrarProduto', (token, produto, preco, descricao, quantidade) => {
+Cypress.Commands.add('CadastrarProduto', (token, produto, preco, descricao, quantidade) => {
     cy.request({
         method: 'POST',
         url: 'Produtos',
